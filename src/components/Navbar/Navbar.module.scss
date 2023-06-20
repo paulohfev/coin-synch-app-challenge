@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  padding: 16px 0;
+
+  .navigation {
+    align-items: center;
+    display: flex;
+
+    .logo {
+      margin-right: 40px;
+    }
+
+    .nav-link {
+      color: var(--text-base-color);
+      font-size: 14px;
+      text-decoration: none;
+
+      &:not(:last-of-type) {
+        margin-right: 24px;
+      }
+    }
+  }
+
+  .actions-wrapper {
+    align-items: center;
+    display: flex;
+
+    .signin-text {
+      color: var(--text-base-color);
+      font-size: 14px;
+      margin-right: 24px;
+    }
+
+    .button-wrapper {
+      width: 100px;
+    }
+  }
+}
