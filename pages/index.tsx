@@ -24,7 +24,7 @@ import styles from './Home.module.scss';
         <section className={styles['hero-section']}>
           <GridContainer>
             <Row>
-              <Column lg={6}>
+              <Column sm={4} md={4} lg={6}>
                 <h1 className={styles['hero-header']}>Lorem ipsum dolor sit amet, consectetur</h1>
                 <h5 className={styles['hero-paragraph']}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis,
