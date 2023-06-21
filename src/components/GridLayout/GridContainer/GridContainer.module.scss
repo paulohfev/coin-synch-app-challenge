@@ -2,5 +2,21 @@
   display: flex;
   flex: 12;
   margin: 0 112px;
-  width: 1216px;
+  max-width: 1216px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex: 8;
+    margin: 0 48px;
+    max-width: 672px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container {
+    flex: 4;
+    margin: 0 24px;
+    max-width: 272px;
+  }
 }
