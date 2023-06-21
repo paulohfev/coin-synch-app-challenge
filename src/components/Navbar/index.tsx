@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import CoinSynchLogo from '../../../public/assets/coin-synch-logo.svg';
+import Button from '@/components/Button';
+import GridContainer from '@/components/GridLayout/GridContainer';
+import Row from '@/components/GridLayout/Row';
+import Column from '@/components/GridLayout/Column';
+import CoinSynchLogo from '../../../assets/coin-synch-logo.svg';
 import styles from './Navbar.module.scss';
-import Button from '../Button';
-import GridContainer from '../GridLayout/GridContainer';
-import Row from '../GridLayout/Row';
-import Column from '../GridLayout/Column';
 
 const Navbar: React.FC = () => {
   return (

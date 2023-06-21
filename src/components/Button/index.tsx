@@ -9,13 +9,14 @@ export enum ButtonCategory {
 
 export enum ButtonSize {
   small = 'small',
+  medium = 'medium',
 }
 
 type Props = {
   category?: ButtonCategory;
   onClick: () => void;
   size?: ButtonSize;
-  text: string;
+  text: string | React.ReactNode;
 };
 
 const Button: React.FC<Props> = ({
