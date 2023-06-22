@@ -5,8 +5,12 @@ import Navbar from '@/components/Navbar';
 import GridContainer from '@/components/GridLayout/GridContainer';
 import Row from '@/components/GridLayout/Row';
 import Column from '@/components/GridLayout/Column';
-import Button from '@/components/Button';
+import Button, { ButtonSize } from '@/components/Button';
 import ArrowIcon from '../assets/icons/arrow-right.svg';
+import CryptoBitcoinIcon from '../assets/icons/crypto-bitcoin.svg';
+import CryptoCycleIcon from '../assets/icons/crypto-cycle.svg';
+import BusinessChartIcon from '../assets/icons/business-chart.svg';
+import LaptopMobileIcon from '../assets/icons/laptop-mobile.svg';
 import styles from './Home.module.scss';
 
  const Home: React.FC = () => {
@@ -32,7 +36,7 @@ import styles from './Home.module.scss';
                 </h5>
 
                 <div className={styles['button-wrapper']}>
-                  <Button onClick={() => ''} text={<span>Sign up now <Image alt="Arrow Icon" src={ArrowIcon} /></span>} />
+                  <Button size={ButtonSize.medium} onClick={() => ''} text={<span>Sign up now <Image alt="Arrow Icon" src={ArrowIcon} /></span>} />
                 </div>
 
                 <div className={styles['hero-keywords-list']}>
@@ -45,6 +49,59 @@ import styles from './Home.module.scss';
           </GridContainer>
 
           <div className={styles['hero-footer-banner']} />
+        </section>
+
+        <section className={styles['about-us-section']}>
+          <GridContainer>
+            <Row className={styles['about-us-row']}>
+              <Column className={styles['about-us-services-column']} sm={4} md={8} lg={7}>
+                <div className={styles['service-card-row']}>
+                  <div className={styles['service-card']}>
+                    <Image alt="Crypto Bitcoin Icon" src={CryptoBitcoinIcon} />
+                    <p className={styles['service-card-label']}>For your company</p>
+                    <h4 className={styles['service-card-title']}>Crypto Solutions</h4>
+                    <p className={styles['service-card-paragraph']}>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,</p>
+                  </div>
+
+                  <div className={styles['service-card']}>
+                    <Image alt="Crypto Bitcoin Icon" src={CryptoCycleIcon} />
+                    <p className={styles['service-card-label']}>For your company</p>
+                    <h4 className={styles['service-card-title']}>Crypto Solutions</h4>
+                    <p className={styles['service-card-paragraph']}>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,</p>
+                  </div>
+                </div>
+
+                <div className={styles['service-card-row']}>
+                  <div className={styles['service-card']}>
+                    <Image alt="Crypto Bitcoin Icon" src={BusinessChartIcon} />
+                    <p className={styles['service-card-label']}>For your company</p>
+                    <h4 className={styles['service-card-title']}>Crypto Solutions</h4>
+                    <p className={styles['service-card-paragraph']}>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,</p>
+                  </div>
+
+                  <div className={styles['service-card']}>
+                    <Image alt="Crypto Bitcoin Icon" src={LaptopMobileIcon} />
+                    <p className={styles['service-card-label']}>For your company</p>
+                    <h4 className={styles['service-card-title']}>Crypto Solutions</h4>
+                    <p className={styles['service-card-paragraph']}>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,</p>
+                  </div>
+                </div>
+              </Column>
+
+              <Column className={styles['about-us-text-column']} sm={4} md={6} lg={4}>
+                <p className={styles['about-us-label']}>Lorem ipsum</p>
+                <h2 className={styles['about-us-title']}>Lorem ipsum</h2>
+                <p className={styles['about-us-paragraph']}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis,
+                  lectus magna fringilla urna, porttitor
+                </p>
+
+                <div className={styles['button-wrapper']}>
+                  <Button onClick={() => ''} size={ButtonSize.medium} text="Sign up now" />
+                </div>
+              </Column>
+            </Row>
+          </GridContainer>
         </section>
       </main>
     </div>
