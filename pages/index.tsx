@@ -1,16 +1,10 @@
 import React from 'react';
-import Image from 'next/image';
 import Head from 'next/head'
 import Navbar from '@/components/Navbar';
-import GridContainer from '@/components/GridLayout/GridContainer';
-import Row from '@/components/GridLayout/Row';
-import Column from '@/components/GridLayout/Column';
-import Button, { ButtonSize } from '@/components/Button';
 import AboutUsSection from '@/components/Home/AboutUsSection';
+import HeroSection from '@/components/Home/HeroSection';
 import NewsletterSection from '@/components/Home/NewsletterSection';
 import Footer from '@/components/Footer';
-import ArrowIcon from '../assets/icons/arrow-right.svg';
-import styles from './Home.module.scss';
 
  const Home: React.FC = () => {
   return (
@@ -24,31 +18,7 @@ import styles from './Home.module.scss';
       <Navbar />
 
       <main>
-        <section className={styles['hero-section']}>
-          <GridContainer>
-            <Row>
-              <Column sm={4} md={4} lg={6}>
-                <h1 className={styles['hero-header']}>Lorem ipsum dolor sit amet, consectetur</h1>
-                <h5 className={styles['hero-paragraph']}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis,
-                  lectus magna fringilla urna, porttitor
-                </h5>
-
-                <div className={styles['button-wrapper']}>
-                  <Button size={ButtonSize.medium} onClick={() => ''} text={<span>Sign up now <Image alt="Arrow Icon" src={ArrowIcon} /></span>} />
-                </div>
-
-                <div className={styles['hero-keywords-list']}>
-                  <div className={styles['hero-keyword']}>Cryptos</div>
-                  <div className={styles['hero-keyword']}>NFTs</div>
-                  <div className={styles['hero-keyword']}>Games</div>
-                </div>
-              </Column>
-            </Row>
-          </GridContainer>
-
-          <div className={styles['hero-footer-banner']} />
-        </section>
+        <HeroSection />
 
         <AboutUsSection />
 

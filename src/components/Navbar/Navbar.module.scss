@@ -2,6 +2,11 @@
   display: flex;
   padding: 16px 0;
 
+  .nav-column {
+    align-items: center;
+    display: flex;
+  }
+
   .navigation {
     align-items: center;
     display: flex;
@@ -34,5 +39,68 @@
     .button-wrapper {
       width: 100px;
     }
+  }
+}
+
+.marquee-section {
+  position: relative;
+  min-height: 82px;
+}
+
+.marquee-section, .marquee-section * {
+  overflow: hidden;
+}
+
+.marquee {
+  white-space: nowrap;
+}
+
+.marquee-div {
+  position: absolute;
+  animation: move-left-to-right linear 5.5s infinite;
+}
+
+/* use this one to move from left to right direction */
+@keyframes move-left-to-right {
+  from {
+      transform: translateX(-50%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+
+/* use this one to move from right to left direction */
+@keyframes move-right-to-left {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-50%);
+  }
+}
+
+.wrapper {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee p {
+  display: inline-block;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
 }
