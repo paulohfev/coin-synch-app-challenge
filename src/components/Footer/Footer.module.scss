@@ -1,0 +1,26 @@
+.footer {
+  padding: 24px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .text {
+      color: var(--text-base-color);
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    .container {
+      justify-content: center;
+
+      .text {
+        display: none;
+      }
+    }
+  }
+}

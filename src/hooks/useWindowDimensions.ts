@@ -7,7 +7,7 @@ type state = {
 
 const useWindowDimensions = () => {
   const [windowDimensions, setWindowDimensions] = useState<state>({
-    width: 769,
+    width: 1025,
     height: 0,
   });
 
