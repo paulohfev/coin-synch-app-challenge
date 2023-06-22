@@ -5,5 +5,9 @@
 
   --primary-color-0: #F7F7F7;
   --primary-color-100: #FFF6E8;
+  --primary-color-200: #FFE1B5;
   --primary-color-500: #FBAB34;
+  --primary-color-700: #AD721A;
+
+  --secondary-color-400: #ACABB7;
 }

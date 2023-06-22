@@ -6,6 +6,7 @@ import GridContainer from '@/components/GridLayout/GridContainer';
 import Row from '@/components/GridLayout/Row';
 import Column from '@/components/GridLayout/Column';
 import Button, { ButtonSize } from '@/components/Button';
+import NewsletterSection from '@/components/Home/NewsletterSection';
 import ArrowIcon from '../assets/icons/arrow-right.svg';
 import CryptoBitcoinIcon from '../assets/icons/crypto-bitcoin.svg';
 import CryptoCycleIcon from '../assets/icons/crypto-cycle.svg';
@@ -103,6 +104,8 @@ import styles from './Home.module.scss';
             </Row>
           </GridContainer>
         </section>
+
+        <NewsletterSection />
       </main>
     </div>
   );

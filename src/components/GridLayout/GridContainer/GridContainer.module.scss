@@ -5,18 +5,18 @@
   max-width: 1216px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .container {
     flex: 8;
     margin: 0 48px;
-    max-width: 672px;
+    max-width: 100%;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 800px) {
   .container {
     flex: 4;
     margin: 0 24px;
-    max-width: 272px;
+    max-width: 100%;
   }
 }

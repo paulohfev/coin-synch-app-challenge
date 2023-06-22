@@ -5,7 +5,7 @@ import Button from '@/components/Button';
 import GridContainer from '@/components/GridLayout/GridContainer';
 import Row from '@/components/GridLayout/Row';
 import Column from '@/components/GridLayout/Column';
-import CoinSynchLogo from '../../../assets/coin-synch-logo.svg';
+import CoinSynchLogo from '../../../assets/images/coin-synch-logo.svg';
 import styles from './Navbar.module.scss';
 
 const Navbar: React.FC = () => {
@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
     <header className={styles.header}>
       <GridContainer>
         <Row>
-          <Column lg={4}>
+          <Column sm={4} md={4} lg={4}>
             <nav className={styles.navigation}>
               <Image
                 alt="CoinSynch Logo"
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
             </nav>          
           </Column>
 
-          <Column lg={2}>
+          <Column sm={4} md={2} lg={2}>
             <div className={styles['actions-wrapper']}>
               <span className={styles['signin-text']}>Sign In</span>
 
