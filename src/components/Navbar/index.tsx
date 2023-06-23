@@ -9,6 +9,8 @@ import Column from '@/components/GridLayout/Column';
 import { fetchCryptoCoinTrades, selectCryptoCoinTrades } from '@/store/slices/cryptoCoins.slice';
 import CoinSynchLogo from '../../../assets/images/coin-synch-logo.svg';
 import styles from './Navbar.module.scss';
+import { CryptoCoinTrade } from '@/interfaces/CryptoCoinTrade';
+import classNames from 'classnames';
 
 const Navbar: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -19,6 +21,22 @@ const Navbar: React.FC = () => {
   const cryptoCoinTrades = useAppSelector(selectCryptoCoinTrades);
 
   console.log(cryptoCoinTrades)
+
+  const renderCryptoCoinTradesContent = () => {
+    return cryptoCoinTrades.map((trade: CryptoCoinTrade) => {
+      return (
+        <div className={styles['marquee-item-wrapper']} key={trade.uuid}>
+          <p className={styles['marquee-item']}>
+            {trade.symbol_id} {trade.price}
+            {trade.taker_side === 'BUY'
+              ? <span className={styles['positive-item']}> +{trade.size}</span>
+              : <span className={styles['negative-item']}> -{trade.size}</span>
+            }
+          </p>
+        </div>
+      )
+    })
+  }
 
   return (
     <header className={styles.header}>
@@ -44,11 +62,9 @@ const Navbar: React.FC = () => {
           </Column>
 
           <Column sm={4} md={4} lg={4}>
-            <div className={styles.wrapper}>
+            <div className={styles['marquee-wrapper']}>
               <div className={styles.marquee}>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce volutpat, ante eu bibendum tincidunt, sem lacus vehicula augue, ut suscipit.
-                </p>
+                {renderCryptoCoinTradesContent()}
               </div>
             </div>
           </Column>

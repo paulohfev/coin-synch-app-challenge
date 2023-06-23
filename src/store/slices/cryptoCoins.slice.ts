@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '..';
 import { CryptoCoinsService } from '@/services/cryptoCoins.service';
+import { CryptoCoinTrade } from '@/interfaces/CryptoCoinTrade';
 
-const initialState: any = {}
+const initialState: CryptoCoinTrade[] | [] = [];
 
 export const fetchCryptoCoinTrades = createAsyncThunk(
   'cryptoCoins/fetCryptoCoinsTrades',
