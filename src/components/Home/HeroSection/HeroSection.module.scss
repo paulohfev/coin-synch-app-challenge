@@ -1,0 +1,125 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+
+  .container {
+    margin-right: 0;
+    max-width: 100%;
+
+    .row {
+      gap: 0;
+      justify-content: space-between;
+    }
+  }
+
+  .header {
+    color: var(--primary-color-500);
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 56px;
+    margin-bottom: 24px;
+  }
+
+  .paragraph {
+    color: var(--text-base-color);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 32px;
+  }
+
+  .button-wrapper {
+    margin-bottom: 80px;
+    width: 278px;
+
+    button {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  .hero-keywords-list {
+    display: flex;
+
+    .hero-keyword {
+      background-color: var(--primary-color-100);
+      border-radius: 4px;
+      color: var(--primary-color-500);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      padding: 4px 16px;
+    }
+
+    .hero-keyword:not(:last-of-type) {
+      margin-right: 32px;
+    }
+  }
+
+  .carousel-column {
+    height: 500px;
+
+    .carousel-slide {
+      width: 30em;
+    }
+  }
+
+  .hero-footer-banner {
+    background-image: url('../../../../assets/images/hero-footer-banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 247px;
+    margin-top: 63px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section {
+    .container {
+      margin-right: 24px;
+    }
+
+    .carousel-column {
+      display: none;
+    }
+
+    .header {
+      font-size: 20px;
+      line-height: 32px;
+      text-align: center;
+    }
+
+    .paragraph {
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    .button-wrapper {
+      margin: 0 auto 24px;
+      width: 180px;
+
+      button {
+        font-size: 14px;
+        height: 32px;
+        line-height: 16px;
+      }
+    }
+
+    .hero-keywords-list {
+      justify-content: center;
+
+      .hero-keyword {
+        font-size: 12px;
+        line-height: 14px;
+      }
+  
+      .hero-keyword:not(:last-of-type) {
+        margin-right: 16px;
+      }
+    }
+  }
+}

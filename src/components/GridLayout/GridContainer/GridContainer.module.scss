@@ -1,14 +1,16 @@
 .container {
   display: flex;
   flex: 12;
-  margin: 0 112px;
+  margin-left: 112px;
+  margin-right: 112px;
   max-width: 1216px;
 }
 
 @media screen and (max-width: 1024px) {
   .container {
     flex: 8;
-    margin: 0 48px;
+    margin-left: 48px;
+    margin-right: 48px;
     max-width: 100%;
   }
 }
@@ -16,7 +18,8 @@
 @media screen and (max-width: 800px) {
   .container {
     flex: 4;
-    margin: 0 24px;
+    margin-left: 24px;
+    margin-right: 24px;
     max-width: 100%;
   }
 }
