@@ -6,11 +6,11 @@ import Button from '@/components/Button';
 import GridContainer from '@/components/GridLayout/GridContainer';
 import Row from '@/components/GridLayout/Row';
 import Column from '@/components/GridLayout/Column';
+import { CryptoCoinTrade } from '@/interfaces/CryptoCoinTrade';
 import { fetchCryptoCoinTrades, selectCryptoCoinTrades } from '@/store/slices/cryptoCoins.slice';
 import CoinSynchLogo from '../../../assets/images/coin-synch-logo.svg';
+import HamburguerIcon from '../../../assets/icons/hamburguer-icon-mobile.svg';
 import styles from './Navbar.module.scss';
-import { CryptoCoinTrade } from '@/interfaces/CryptoCoinTrade';
-import classNames from 'classnames';
 
 const Navbar: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -19,8 +19,6 @@ const Navbar: React.FC = () => {
     dispatch(fetchCryptoCoinTrades())
   }, [dispatch]);
   const cryptoCoinTrades = useAppSelector(selectCryptoCoinTrades);
-
-  console.log(cryptoCoinTrades)
 
   const renderCryptoCoinTradesContent = () => {
     return cryptoCoinTrades.map((trade: CryptoCoinTrade) => {
@@ -40,9 +38,9 @@ const Navbar: React.FC = () => {
 
   return (
     <header className={styles.header}>
-      <GridContainer>
-        <Row>
-          <Column className={styles['nav-column']} sm={4} md={4} lg={4}>
+      <GridContainer className={styles.container}>
+        <Row className={styles.row}>
+          <Column className={styles['nav-column']} sm={2} md={3} lg={4}>
             <nav className={styles.navigation}>
               <Image
                 alt="CoinSynch Logo"
@@ -51,17 +49,19 @@ const Navbar: React.FC = () => {
                 src={CoinSynchLogo}
               />
 
-              <Link className={styles['nav-link']} href="#">
-                About us
-              </Link>
+              <div className={styles['nav-links-list']}>
+                <Link className={styles['nav-link']} href="#">
+                  About us
+                </Link>
 
-              <Link className={styles['nav-link']} href="#">
-                Top Cryptos
-              </Link>
+                <Link className={styles['nav-link']} href="#">
+                  Top Cryptos
+                </Link>
+              </div>
             </nav>          
           </Column>
 
-          <Column sm={4} md={4} lg={4}>
+          <Column className={styles['marquee-column']} sm={4} md={8} lg={4}>
             <div className={styles['marquee-wrapper']}>
               <div className={styles.marquee}>
                 {renderCryptoCoinTradesContent()}
@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
             </div>
           </Column>
 
-          <Column sm={4} md={2} lg={2}>
+          <Column className={styles['actions-column']} sm={1} md={2} lg={2}>
             <div className={styles['actions-wrapper']}>
               <span className={styles['signin-text']}>Sign In</span>
 
@@ -77,6 +77,8 @@ const Navbar: React.FC = () => {
                 <Button onClick={() => ''} text="Sign up" />
               </div>
             </div>
+
+            <Image className={styles['mobile-icon']} alt="mobile hamburguer icon" src={HamburguerIcon} />
           </Column>
         </Row>
       </GridContainer>
