@@ -1,7 +1,16 @@
 .section {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--primary-color-0) 100%);
   display: flex;
+  overflow: hidden;
   padding: 120px 0 130px;
+  
+  .mobile-carousel {
+    display: none;
+  }
+
+  .desktop-services-view {
+    display: initial;
+  }
 
   .row {
     .text-column {
@@ -44,7 +53,6 @@
 
   .service-card-row {
     display: flex;
-    flex-wrap: wrap;
 
     &:first-of-type {
       justify-content: flex-start;
@@ -59,7 +67,6 @@
     background-color: var(--white-color);
     border-radius: 6px;
     box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.05);
-    height: 268px;
     margin-bottom: 32px;
     padding: 24px;
     width: 280px;
@@ -94,6 +101,14 @@
 
 @media screen and (max-width: 800px) {
   .section {
+    .mobile-carousel {
+      display: initial;
+    }
+
+    .desktop-services-view {
+      display: none;
+    }
+
     .row {
       justify-content: center;
 
@@ -109,9 +124,48 @@
     .button-wrapper {
       display: none;
     }
-  }
 
-  .service-card-row {
-    flex-wrap: nowrap;
+    .section-label {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+
+    .service-card-row {
+      display: flex;
+      margin-right: 32px;
+
+      &:first-of-type {
+        justify-content: initial;
+      }
+  
+      &:last-of-type {
+        justify-content: initial;
+      }
+    }
+
+    .service-card {
+      height: fit-content;
+      width: 200px;
+
+      .service-card-image {
+        height: 40px;
+        width: 40px;
+      }
+
+      .service-card-label {
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      .service-card-title {
+        font-size: 20px;
+      }
+    }
   }
 }
