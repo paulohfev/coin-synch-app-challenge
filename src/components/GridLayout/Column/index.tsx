@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import useWindowDimensions from '@/hooks/useWindowDimensions';
 import styles from './Column.module.scss';
 
 type Props = {
@@ -12,20 +11,8 @@ type Props = {
 }
 
 const Column: React.FC<Props> = ({ className, children, lg, md, sm }) => {
-  const { width } = useWindowDimensions();
-
-  const getResponsiveStyling = () => {
-    if (width > 1024) {
-      return styles[`column-lg-${lg}`];
-    } else if (width <= 1024 && width >= 800) {
-      return styles[`column-md-${md}`];
-    } else {
-      return styles[`column-sm-${sm}`];
-    }
-  }
-
   return (
-    <div className={classNames(className, getResponsiveStyling())}>
+    <div className={classNames(className, styles[`column-sm-${sm}`], styles[`column-md-${md}`], styles[`column-lg-${lg}`])}>
       {children}
     </div>
   );
